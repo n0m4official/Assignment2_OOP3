@@ -1,53 +1,61 @@
 package utilities;
 
+import java.util.NoSuchElementException;
+
 /**
- * A generic queue interface that defines how a queue should work.
- * A queue follows the "First In, First Out" (FIFO) principle.
+ * A generic stack interface that defines the behavior of a Last-In-First-Out (LIFO) data structure.
+ * <p>
+ * Implementations of this interface must adhere to the following guidelines:
+ * <ul>
+ *   <li>{@link #push(Object)} throws {@link NullPointerException} if a null element is pushed.</li>
+ *   <li>{@link #pop()} and {@link #peek()} throw {@link NoSuchElementException} if the stack is empty.</li>
+ * </ul>
+ * </p>
  *
- * @param <T> The type of elements stored in the queue.
+ * @param <T> the type of elements stored in this stack.
  */
-public interface QueueADT<T> {
+public interface StackADT<T> {
 
     /**
-     * Adds an item to the end of the queue.
+     * Pushes an element onto the top of this stack.
      *
-     * @param element The item to add.
-     * @throws NullPointerException If the element is null.
+     * @param element the element to push onto the stack; must not be null.
+     * @throws NullPointerException if the element is null.
      */
-    void enqueue(T element);
+    void push(T element);
 
     /**
-     * Removes and returns the item from the front of the queue.
+     * Removes and returns the element at the top of this stack.
      *
-     * @return The item that was removed.
-     * @throws java.util.NoSuchElementException If the queue is empty.
+     * @return the element at the top of the stack.
+     * @throws NoSuchElementException if this stack is empty.
      */
-    T dequeue();
+    T pop();
 
     /**
-     * Peeks at the front item without removing it.
+     * Retrieves, but does not remove, the element at the top of this stack.
      *
-     * @return The item at the front of the queue.
-     * @throws java.util.NoSuchElementException If the queue is empty.
+     * @return the element at the top of the stack.
+     * @throws NoSuchElementException if this stack is empty.
      */
-    T first();
+    T peek();
 
     /**
-     * Checks if the queue is empty.
+     * Checks whether this stack is empty.
      *
-     * @return true if the queue has no items, false otherwise.
+     * @return {@code true} if this stack contains no elements; {@code false} otherwise.
      */
     boolean isEmpty();
 
     /**
-     * Gets the number of items in the queue.
+     * Returns the number of elements in this stack.
      *
-     * @return The count of items in the queue.
+     * @return the number of elements currently in the stack.
      */
     int size();
 
     /**
-     * Clears all items from the queue, making it empty.
+     * Removes all elements from this stack, leaving it empty.
      */
     void clear();
 }
