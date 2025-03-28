@@ -14,7 +14,7 @@ public interface QueueADT<T> {
      * @param element The item to add.
      * @throws NullPointerException If the element is null.
      */
-    void enqueue(T element);
+    public void enqueue(T element);
 
     /**
      * Removes and returns the item from the front of the queue.
@@ -22,7 +22,7 @@ public interface QueueADT<T> {
      * @return The item that was removed.
      * @throws java.util.NoSuchElementException If the queue is empty.
      */
-    T dequeue();
+    public T dequeue();
 
     /**
      * Peeks at the front item without removing it.
@@ -30,24 +30,24 @@ public interface QueueADT<T> {
      * @return The item at the front of the queue.
      * @throws java.util.NoSuchElementException If the queue is empty.
      */
-    T first();
+    public T first();
 
     /**
      * Checks if the queue is empty.
      *
      * @return true if the queue has no items, false otherwise.
      */
-    boolean isEmpty();
+    public boolean isEmpty();
 
     /**
      * Gets the number of items in the queue.
      *
      * @return The count of items in the queue.
      */
-    int size();
+    public int size();
 
     /**
      * Clears all items from the queue, making it empty.
      */
-    void clear();
+    public void clear();
 }
