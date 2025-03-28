@@ -14,7 +14,7 @@ public interface StackADT<T> {
      * @param element The item to add.
      * @throws NullPointerException If the element is null.
      */
-    void push(T element);
+    public void push(T element);
 
     /**
      * Removes and returns the item from the top of the stack.
@@ -22,7 +22,7 @@ public interface StackADT<T> {
      * @return The item that was removed.
      * @throws java.util.NoSuchElementException If the stack is empty.
      */
-    T pop();
+    public T pop();
 
     /**
      * Peeks at the top item without removing it.
@@ -30,24 +30,24 @@ public interface StackADT<T> {
      * @return The item at the top of the stack.
      * @throws java.util.NoSuchElementException If the stack is empty.
      */
-    T peek();
+    public T peek();
 
     /**
      * Checks if the stack is empty.
      *
      * @return true if the stack has no items, false otherwise.
      */
-    boolean isEmpty();
+    public boolean isEmpty();
 
     /**
      * Gets the number of items in the stack.
      *
      * @return The count of items in the stack.
      */
-    int size();
+    public int size();
 
     /**
      * Clears all items from the stack, making it empty.
      */
-    void clear();
+    public void clear();
 }
